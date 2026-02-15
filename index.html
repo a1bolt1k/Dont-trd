@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Одностраничный сайт-визитка — ДОНТРЕЙД</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__inner">
+        <div class="header__logo">ДОНТРЕЙД</div>
+        <nav class="nav nav_desktop">
+          <a href="#hero" class="nav__link">Главная</a>
+          <a href="#services" class="nav__link">О компании</a>
+          <a href="#fuel" class="nav__link">Услуги</a>
+          <a href="#fuel" class="nav__link">Топливо</a>
+          <a href="#geography" class="nav__link">География</a>
+          <a href="#partners" class="nav__link">Партнёрам</a>
+          <a href="#documents" class="nav__link">Документы</a>
+          <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+        <div class="header__actions">
+          <button class="btn btn_primary header__cta">Запросить КП</button>
+          <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <nav class="nav nav_mobile" id="mobileNav">
+        <a href="#hero" class="nav__link">Главная</a>
+        <a href="#services" class="nav__link">Услуги</a>
+        <a href="#fuel" class="nav__link">Топливо</a>
+        <a href="#geography" class="nav__link">География</a>
+        <a href="#partners" class="nav__link">Партнёрам</a>
+        <a href="#documents" class="nav__link">Документы</a>
+        <a href="#contacts" class="nav__link">Контакты</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero" id="hero">
+        <div class="hero__slider">
+          <div class="hero__slide hero__slide_active" data-slide="0">
+            <img src="https://images.unsplash.com/photo-1768564206500-5cddb1fea679?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&fit=max" alt="Нефтеперерабатывающий завод" />
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+              <div class="hero__title-wrap">
+                <h1 class="hero__title">НАДЕЖНЫЕ ПОСТАВКИ НЕФТЕПРОДУКТОВ</h1>
+              </div>
+              <p class="hero__subtitle">Оптовая реализация топлива высшего качества для вашего бизнеса с гарантией соблюдения сроков.</p>
+              <div class="hero__buttons">
+                <button class="btn btn_primary btn_lg">Узнать подробнее</button>
+                <button class="btn btn_outline btn_lg">Связаться с нами</button>
+              </div>
+            </div>
+          </div>
+          <div class="hero__slide" data-slide="1">
+            <img src="https://images.unsplash.com/photo-1761590542271-27a3518ab957?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&fit=max" alt="Топливозаправщик" />
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+              <div class="hero__title-wrap">
+                <h1 class="hero__title">СЕТЬ НЕФТЕБАЗ ПО ВСЕЙ РОССИИ</h1>
+              </div>
+              <p class="hero__subtitle">Собственные терминалы хранения и развитая логистическая инфраструктура для бесперебойных поставок.</p>
+              <div class="hero__buttons">
+                <button class="btn btn_primary btn_lg">Узнать подробнее</button>
+                <button class="btn btn_outline btn_lg">Связаться с нами</button>
+              </div>
+            </div>
+          </div>
+          <div class="hero__slide" data-slide="2">
+            <img src="https://images.unsplash.com/photo-1764708969667-2d0e31372d14?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&fit=max" alt="АЗС" />
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+              <div class="hero__title-wrap">
+                <h1 class="hero__title">СОВРЕМЕННЫЕ АЗС</h1>
+              </div>
+              <p class="hero__subtitle">Выгодные условия заправки для корпоративных клиентов и качественный сервис.</p>
+              <div class="hero__buttons">
+                <button class="btn btn_primary btn_lg">Узнать подробнее</button>
+                <button class="btn btn_outline btn_lg">Связаться с нами</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__dots" id="heroDots"></div>
+      </section>
+
+      <!-- Services -->
+      <section class="section section_light" id="services">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">Наши услуги</h2>
+            <p class="section__desc">Комплексные решения для бизнеса: от поставки до хранения и контроля качества нефтепродуктов.</p>
+          </div>
+          <div class="services-grid">
+            <div class="card reveal" data-delay="0">
+              <div class="card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+              <h3 class="card__title">Оптовые поставки</h3>
+              <p class="card__text">Поставка нефтепродуктов крупным и мелким оптом.</p>
+              <div class="card__line"></div>
+            </div>
+            <div class="card reveal" data-delay="1">
+              <div class="card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+              <h3 class="card__title">Логистика</h3>
+              <p class="card__text">Доставка собственным автотранспортом и Ж/Д.</p>
+              <div class="card__line"></div>
+            </div>
+            <div class="card reveal" data-delay="2">
+              <div class="card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <h3 class="card__title">Хранение</h3>
+              <p class="card__text">Услуги по хранению на собственных нефтебазах.</p>
+              <div class="card__line"></div>
+            </div>
+            <div class="card reveal" data-delay="3">
+              <div class="card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6 6 0 1 1-4 0"/><path d="M5.52 16h12.96"/></svg></div>
+              <h3 class="card__title">Контроль качества</h3>
+              <p class="card__text">Лабораторный анализ каждой партии топлива.</p>
+              <div class="card__line"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fuel -->
+      <section class="section section_gray" id="fuel">
+        <div class="container">
+          <div class="fuel-intro reveal">
+            <div class="fuel-intro__text">
+              <h2 class="section__title">Топливо и нефтепродукты</h2>
+              <p class="section__desc section__desc_lg">Мы предлагаем широкий ассортимент топлива высокого экологического класса (ЕВРО-5, ЕВРО-6) для различных отраслей промышленности, аграрного сектора и транспортных компаний. Вся продукция проходит строгий лабораторный контроль.</p>
+            </div>
+            <div class="fuel-intro__img">
+              <img src="https://images.unsplash.com/photo-1748261347902-451fb437e8fb?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="Лабораторный контроль качества топлива" />
+            </div>
+          </div>
+          <div class="table-wrap reveal">
+            <table class="fuel-table">
+              <thead>
+                <tr>
+                  <th>Категория</th>
+                  <th>Марка</th>
+                  <th>Описание / ГОСТ</th>
+                  <th class="text-center">Наличие</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold">Дизельное топливо</td>
+                  <td>ДТ-Л-К5 / ДТ-З-К5</td>
+                  <td>Сорт C / Сорт F, ГОСТ 32511-2013</td>
+                  <td class="text-center"><span class="status status_ok" title="В наличии"></span></td>
+                </tr>
+                <tr>
+                  <td class="font-bold">Бензины</td>
+                  <td>АИ-92-К5 / АИ-95-К5</td>
+                  <td>Неэтилированный, ГОСТ 32513-2013</td>
+                  <td class="text-center"><span class="status status_ok" title="В наличии"></span></td>
+                </tr>
+                <tr>
+                  <td class="font-bold">Керосин</td>
+                  <td>ТС-1 / РТ</td>
+                  <td>Авиационный, ГОСТ 10227-86</td>
+                  <td class="text-center"><span class="status status_order" title="Под заказ"></span></td>
+                </tr>
+                <tr>
+                  <td class="font-bold">Мазут</td>
+                  <td>М-100 / М-40</td>
+                  <td>Топочный зольный, ГОСТ 10585-2013</td>
+                  <td class="text-center"><span class="status status_ok" title="В наличии"></span></td>
+                </tr>
+                <tr>
+                  <td class="font-bold">Битум</td>
+                  <td>БНД 60/90</td>
+                  <td>Дорожный вязкий, ГОСТ 33133-2014</td>
+                  <td class="text-center"><span class="status status_order" title="Под заказ"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="section__cta reveal">
+            <button class="btn btn_primary btn_lg">Скачать полный прайс-лист (PDF)</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Geography -->
+      <section class="section section_light" id="geography">
+        <div class="container">
+          <h2 class="section__title section__title_solo reveal">География работы</h2>
+          <div class="geography-layout">
+            <div class="geography-map reveal">
+              <div class="geography-map__wrap">
+                <img src="assets/world.png" alt="Карта филиалов РФ" class="geography-map__img" />
+                <div class="geography-map__markers">
+                  <div class="marker" data-city="1" style="left: 22%; top: 64%;"><span class="marker__dot"></span><span class="marker__tooltip">г. Белгород</span></div>
+                  <div class="marker" data-city="2" style="left: 24%; top: 61%;"><span class="marker__dot"></span><span class="marker__tooltip">г. Воронеж</span></div>
+                  <div class="marker" data-city="3" style="left: 21%; top: 70%;"><span class="marker__dot"></span><span class="marker__tooltip">Ростов-на-Дону</span></div>
+                  <div class="marker" data-city="4" style="left: 19%; top: 76%;"><span class="marker__dot"></span><span class="marker__tooltip">г. Краснодар</span></div>
+                  <div class="marker" data-city="5" style="left: 28%; top: 71%;"><span class="marker__dot"></span><span class="marker__tooltip">г. Волгоград</span></div>
+                  <div class="marker" data-city="6" style="left: 36%; top: 62%;"><span class="marker__dot"></span><span class="marker__tooltip">г. Уфа</span></div>
+                  <div class="marker" data-city="7" style="left: 40%; top: 64%;"><span class="marker__dot"></span><span class="marker__tooltip">г. Челябинск</span></div>
+                </div>
+              </div>
+              <p class="geography-map__note">* Филиальная сеть компании охватывает ключевые промышленные регионы России</p>
+            </div>
+            <div class="geography-list reveal">
+              <h3 class="geography-list__title"><span class="geography-list__bar"></span>Филиалы</h3>
+              <ul class="geography-list__items">
+                <li class="geography-item" data-city="1"><svg class="icon icon_sm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> г. Белгород</li>
+                <li class="geography-item" data-city="2"><svg class="icon icon_sm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> г. Воронеж</li>
+                <li class="geography-item" data-city="3"><svg class="icon icon_sm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ростов-на-Дону</li>
+                <li class="geography-item" data-city="4"><svg class="icon icon_sm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> г. Краснодар</li>
+                <li class="geography-item" data-city="5"><svg class="icon icon_sm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> г. Волгоград</li>
+                <li class="geography-item" data-city="6"><svg class="icon icon_sm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> г. Уфа</li>
+                <li class="geography-item" data-city="7"><svg class="icon icon_sm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> г. Челябинск</li>
+              </ul>
+              <p class="geography-list__footer">Мы постоянно расширяем географию присутствия, чтобы быть ближе к нашим партнерам.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subdivisions -->
+      <section class="section section_gray" id="subdivisions">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">Обособленные подразделения</h2>
+            <p class="section__desc">Широкая сеть филиалов позволяет нам оперативно реагировать на запросы клиентов в ключевых регионах присутствия.</p>
+          </div>
+          <div class="subdivisions-grid">
+            <div class="subdivision-card reveal" data-delay="0">
+              <div class="subdivision-card__head">
+                <div>
+                  <h3 class="subdivision-card__city">г. Краснодар</h3>
+                  <span class="subdivision-card__region">Краснодарский край</span>
+                </div>
+                <div class="subdivision-card__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </div>
+              <div class="subdivision-card__body">
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ул. Северная, д. 327</p>
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +7 (861) 200-11-22</p>
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:krd@dontrade.ru">krd@dontrade.ru</a></p>
+              </div>
+            </div>
+            <div class="subdivision-card reveal" data-delay="1">
+              <div class="subdivision-card__head">
+                <div>
+                  <h3 class="subdivision-card__city">г. Ростов-на-Дону</h3>
+                  <span class="subdivision-card__region">Ростовская область</span>
+                </div>
+                <div class="subdivision-card__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </div>
+              <div class="subdivision-card__body">
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> пр. Буденновский, д. 60</p>
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +7 (863) 300-33-44</p>
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:rst@dontrade.ru">rst@dontrade.ru</a></p>
+              </div>
+            </div>
+            <div class="subdivision-card reveal" data-delay="2">
+              <div class="subdivision-card__head">
+                <div>
+                  <h3 class="subdivision-card__city">г. Воронеж</h3>
+                  <span class="subdivision-card__region">Воронежская область</span>
+                </div>
+                <div class="subdivision-card__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </div>
+              <div class="subdivision-card__body">
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ул. Революции 1905 года, д. 82</p>
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +7 (473) 250-55-66</p>
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:vrn@dontrade.ru">vrn@dontrade.ru</a></p>
+              </div>
+            </div>
+            <div class="subdivision-card reveal" data-delay="3">
+              <div class="subdivision-card__head">
+                <div>
+                  <h3 class="subdivision-card__city">г. Волгоград</h3>
+                  <span class="subdivision-card__region">Волгоградская область</span>
+                </div>
+                <div class="subdivision-card__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </div>
+              <div class="subdivision-card__body">
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> пр. Ленина, д. 98</p>
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +7 (844) 270-77-88</p>
+                <p><svg class="icon icon_xs" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:vlg@dontrade.ru">vlg@dontrade.ru</a></p>
+              </div>
+            </div>
+          </div>
+          <p class="section__note reveal">Полный список адресов складов и нефтебаз доступен по запросу у менеджеров.</p>
+        </div>
+      </section>
+
+      <!-- Partners -->
+      <section class="section section_dark" id="partners">
+        <div class="section__bg"><img src="https://images.unsplash.com/photo-1745847768380-2caeadbb3b71?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&fit=max" alt="" /><div class="section__bg-overlay"></div></div>
+        <div class="container relative">
+          <div class="section__header section__header_center reveal">
+            <h2 class="section__title section__title_white">Как начать сотрудничество</h2>
+            <p class="section__desc section__desc_white">Простая и прозрачная схема работы. Мы ценим ваше время, поэтому свели бюрократию к минимуму.</p>
+          </div>
+          <div class="partners-steps">
+            <div class="step-card reveal" data-delay="0">
+              <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+              <span class="step-card__num">01</span>
+              <h3 class="step-card__title">Заявка</h3>
+              <p class="step-card__text">Оставьте заявку на сайте или по телефону</p>
+            </div>
+            <div class="step-card reveal" data-delay="1"><span class="step-card__arrow"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
+              <span class="step-card__num">02</span>
+              <h3 class="step-card__title">Расчет</h3>
+              <p class="step-card__text">Персональный менеджер подготовит КП</p>
+            </div>
+            <div class="step-card reveal" data-delay="2"><span class="step-card__arrow"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+              <span class="step-card__num">03</span>
+              <h3 class="step-card__title">Договор</h3>
+              <p class="step-card__text">Подписание договора поставки</p>
+            </div>
+            <div class="step-card reveal" data-delay="3"><span class="step-card__arrow"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+              <span class="step-card__num">04</span>
+              <h3 class="step-card__title">Оплата</h3>
+              <p class="step-card__text">Удобные варианты оплаты продукции</p>
+            </div>
+            <div class="step-card reveal" data-delay="4">
+              <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+              <span class="step-card__num">05</span>
+              <h3 class="step-card__title">Поставка</h3>
+              <p class="step-card__text">Отгрузка топлива точно в срок</p>
+            </div>
+          </div>
+          <div class="section__cta reveal">
+            <button class="btn btn_primary btn_lg">Стать партнёром</button>
+            <p class="partners__disclaimer">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Documents -->
+      <section class="section section_light" id="documents">
+        <div class="container">
+          <h2 class="section__title section__title_solo reveal">Документы и реквизиты</h2>
+          <div class="documents-layout">
+            <div class="documents-list reveal">
+              <h3 class="documents-subtitle"><span class="documents-subtitle__line"></span>Учредительные документы</h3>
+              <div class="document-item">
+                <div class="document-item__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                <div class="document-item__info"><h4>Свидетельство о государственной регистрации (ОГРН)</h4><span>PDF • 2.4 MB</span></div>
+                <svg class="icon document-item__download" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </div>
+              <div class="document-item">
+                <div class="document-item__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                <div class="document-item__info"><h4>Устав ООО «ДОНТРЕЙД»</h4><span>PDF • 4.1 MB</span></div>
+                <svg class="icon document-item__download" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </div>
+              <div class="document-item">
+                <div class="document-item__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                <div class="document-item__info"><h4>Свидетельство о постановке на учет в налоговом органе (ИНН)</h4><span>PDF • 1.8 MB</span></div>
+                <svg class="icon document-item__download" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </div>
+              <div class="document-item">
+                <div class="document-item__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                <div class="document-item__info"><h4>Политика в отношении обработки персональных данных</h4><span>PDF • 0.5 MB</span></div>
+                <svg class="icon document-item__download" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </div>
+            </div>
+            <div class="requisites reveal">
+              <h3 class="documents-subtitle"><span class="documents-subtitle__line"></span>Реквизиты компании</h3>
+              <div class="requisites-card">
+                <div class="requisites-card__img">
+                  <img src="https://images.unsplash.com/photo-1763729805496-b5dbf7f00c79?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max" alt="Подписание договора" />
+                  <div class="requisites-card__img-overlay"></div>
+                  <h4 class="requisites-card__title">ООО «ДОНТРЕЙД»</h4>
+                </div>
+                <div class="requisites-card__body">
+                  <div class="requisites-row"><span>Юр. адрес:</span><span>344000, г. Ростов-на-Дону, пр. Буденновский, д. 60</span></div>
+                  <div class="requisites-row"><span>ИНН / КПП:</span><span>6164000000 / 616401001</span></div>
+                  <div class="requisites-row"><span>ОГРН:</span><span>1026100000000</span></div>
+                  <div class="requisites-row"><span>Банк:</span><span>ЮГО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК</span></div>
+                  <div class="requisites-row"><span>Р/счет:</span><span>40702810000000000000</span></div>
+                  <button class="btn btn_outline btn_full">Скачать карточку предприятия</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacts -->
+      <section class="section section_gray" id="contacts">
+        <div class="container">
+          <h2 class="section__title section__title_solo reveal">Контакты</h2>
+          <div class="contacts-layout">
+            <div class="contacts-form reveal">
+              <h3 class="contacts-form__title">Связаться с нами</h3>
+              <form class="form" id="contactForm">
+                <div class="form__row">
+                  <div class="form__group"><label>Ваше имя</label><input type="text" placeholder="Иван Иванов" /></div>
+                  <div class="form__group"><label>Телефон</label><input type="tel" placeholder="+7 (999) 000-00-00" /></div>
+                </div>
+                <div class="form__group"><label>Email</label><input type="email" placeholder="example@company.ru" /></div>
+                <div class="form__group"><label>Сообщение</label><textarea placeholder="Ваш вопрос или предложение..." rows="5"></textarea></div>
+                <button type="submit" class="btn btn_primary btn_full btn_xl">Отправить заявку</button>
+                <p class="form__disclaimer">Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных</p>
+              </form>
+            </div>
+            <div class="contacts-info reveal">
+              <div class="contacts-info__grid">
+                <div><h4><svg class="icon icon_orange" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Центральный офис</h4><p>344000, г. Ростов-на-Дону,<br>пр. Буденновский, д. 60,<br>БЦ «Гедон», оф. 505</p></div>
+                <div><h4><svg class="icon icon_orange" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Режим работы</h4><p>Пн-Пт: 09:00 — 18:00<br>Сб-Вс: Выходной</p></div>
+              </div>
+              <div class="contacts-info__contact">
+                <div class="contact-block"><div class="contact-block__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><p class="contact-block__label">Телефон</p><p class="contact-block__value">+7 (863) 300-33-44</p></div></div>
+                <div class="contact-block"><div class="contact-block__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><p class="contact-block__label">Email</p><p class="contact-block__value">info@dontrade.ru</p></div></div>
+              </div>
+              <div class="contacts-map">
+                <img src="https://images.unsplash.com/photo-1754298994778-514e0a285479?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="Офисный центр" />
+                <div class="contacts-map__overlay"></div>
+                <button class="btn btn_white" type="button"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Показать на Яндекс.Картах</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <div class="footer__logo">ДОНТРЕЙД</div>
+            <p class="footer__desc">Надежный поставщик нефтепродуктов по всей России. Гарантия качества, соблюдение сроков, гибкие условия сотрудничества.</p>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__title">Компания</h4>
+            <ul class="footer__links">
+              <li><a href="#services">О компании</a></li>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#fuel">Топливо</a></li>
+              <li><a href="#geography">Филиалы</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__title">Контакты</h4>
+            <ul class="footer__contacts">
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 344000, г. Ростов-на-Дону,<br>пр. Буденновский, д. 60</li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +7 (863) 300-33-44</li>
+              <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@dontrade.ru</li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <button class="btn btn_primary btn_full">Заказать звонок</button>
+            <button class="btn btn_outline btn_full btn_white">Личный кабинет</button>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>© <span id="currentYear"></span> ООО «ДонТрейд». Все права защищены.</p>
+          <div class="footer__bottom-links">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Карта сайта</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
