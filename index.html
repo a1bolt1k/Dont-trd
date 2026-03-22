@@ -305,31 +305,26 @@
           <div class="partners-steps">
             <div class="step-card reveal" data-delay="0">
               <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-              <span class="step-card__num">01</span>
               <h3 class="step-card__title">Заявка</h3>
               <p class="step-card__text">Оставьте заявку на сайте или по телефону</p>
             </div>
             <div class="step-card reveal" data-delay="1"><span class="step-card__arrow"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
               <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div>
-              <span class="step-card__num">02</span>
               <h3 class="step-card__title">Расчет</h3>
               <p class="step-card__text">Персональный менеджер подготовит КП</p>
             </div>
             <div class="step-card reveal" data-delay="2"><span class="step-card__arrow"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
               <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
-              <span class="step-card__num">03</span>
               <h3 class="step-card__title">Договор</h3>
               <p class="step-card__text">Подписание договора поставки</p>
             </div>
             <div class="step-card reveal" data-delay="3"><span class="step-card__arrow"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
               <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
-              <span class="step-card__num">04</span>
               <h3 class="step-card__title">Оплата</h3>
               <p class="step-card__text">Удобные варианты оплаты продукции</p>
             </div>
             <div class="step-card reveal" data-delay="4">
               <div class="step-card__icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-              <span class="step-card__num">05</span>
               <h3 class="step-card__title">Поставка</h3>
               <p class="step-card__text">Отгрузка топлива точно в срок</p>
             </div>
@@ -398,15 +393,31 @@
           <div class="contacts-layout">
             <div class="contacts-form reveal">
               <h3 class="contacts-form__title">Связаться с нами</h3>
-              <form class="form" id="contactForm">
+              <form class="form" id="contactForm" novalidate>
+                <p class="form__status" id="contactFormStatus" role="status" aria-live="polite" hidden></p>
                 <div class="form__row">
-                  <div class="form__group"><label>Ваше имя</label><input type="text" placeholder="Иван Иванов" /></div>
-                  <div class="form__group"><label>Телефон</label><input type="tel" placeholder="+7 (999) 000-00-00" /></div>
+                  <div class="form__group" data-field="name">
+                    <label for="contactName">Ваше имя</label>
+                    <input type="text" id="contactName" name="name" placeholder="Иван Иванов" autocomplete="name" />
+                    <span class="form__error" id="contactNameError" hidden></span>
+                  </div>
+                  <div class="form__group" data-field="phone">
+                    <label for="contactPhone">Телефон</label>
+                    <input type="tel" id="contactPhone" name="phone" placeholder="+7 (999) 000-00-00" autocomplete="tel" />
+                    <span class="form__error" id="contactPhoneError" hidden></span>
+                  </div>
                 </div>
-                <div class="form__group"><label>Email</label><input type="email" placeholder="example@company.ru" /></div>
-                <div class="form__group"><label>Сообщение</label><textarea placeholder="Ваш вопрос или предложение..." rows="5"></textarea></div>
-                <button type="submit" class="btn btn_primary btn_full btn_xl">Отправить заявку</button>
-                <p class="form__disclaimer">Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных</p>
+                <div class="form__group" data-field="email">
+                  <label for="contactEmail">Email</label>
+                  <input type="email" id="contactEmail" name="email" placeholder="example@company.ru" autocomplete="email" />
+                  <span class="form__error" id="contactEmailError" hidden></span>
+                </div>
+                <div class="form__group" data-field="message">
+                  <label for="contactMessage">Сообщение</label>
+                  <textarea id="contactMessage" name="message" placeholder="Ваш вопрос или предложение..." rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn_primary btn_full btn_xl" id="contactSubmitBtn">Отправить заявку</button>
+                <p class="form__disclaimer">Письмо будет отправлено на Info@don-trd.ru. Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных</p>
               </form>
             </div>
             <div class="contacts-info reveal">
@@ -419,9 +430,7 @@
                 <div class="contact-block"><div class="contact-block__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><p class="contact-block__label">Email</p><p class="contact-block__value">info@dontrade.ru</p></div></div>
               </div>
               <div class="contacts-map">
-                <img src="https://images.unsplash.com/photo-1754298994778-514e0a285479?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="Офисный центр" />
-                <div class="contacts-map__overlay"></div>
-                <button class="btn btn_white" type="button"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Показать на Яндекс.Картах</button>
+                <div class="contacts-map__overlay" id="contactsYandexMap" role="application" aria-label="Карта: офис ДОНТРЕЙД, Ростов-на-Дону"></div>
               </div>
             </div>
           </div>
