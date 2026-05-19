@@ -406,4 +406,129 @@
     );
     mapObserver.observe(container);
   })();
+
+  // Consent: cookies & privacy modals
+  var STORAGE_COOKIES = 'dontrade_cookies_consent';
+  var STORAGE_PRIVACY = 'dontrade_privacy_consent';
+
+  var cookieBanner = document.getElementById('cookieBanner');
+  var privacyModal = document.getElementById('privacyModal');
+  var cookiesModal = document.getElementById('cookiesModal');
+  var modals = { privacy: privacyModal, cookies: cookiesModal };
+  var activeModal = null;
+
+  function setConsent(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (err) { /* ignore */ }
+  }
+
+  function getConsent(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function showCookieBanner() {
+    if (!cookieBanner || getConsent(STORAGE_COOKIES)) return;
+    cookieBanner.classList.add('cookie-banner_visible');
+    cookieBanner.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideCookieBanner() {
+    if (!cookieBanner) return;
+    cookieBanner.classList.remove('cookie-banner_visible');
+    cookieBanner.setAttribute('aria-hidden', 'true');
+  }
+
+  function openModal(name) {
+    var modal = modals[name];
+    if (!modal) return;
+    if (activeModal && activeModal !== modal) {
+      closeModal(activeModal);
+    }
+    activeModal = modal;
+    modal.classList.add('modal-overlay_open');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('modal-overlay_open');
+    modal.setAttribute('aria-hidden', 'true');
+    if (activeModal === modal) activeModal = null;
+  }
+
+  function acceptCookies() {
+    setConsent(STORAGE_COOKIES, 'accepted');
+    hideCookieBanner();
+    closeModal(cookiesModal);
+  }
+
+  function declineCookies() {
+    setConsent(STORAGE_COOKIES, 'declined');
+    hideCookieBanner();
+    closeModal(cookiesModal);
+  }
+
+  function acceptPrivacy() {
+    setConsent(STORAGE_PRIVACY, 'accepted');
+    closeModal(privacyModal);
+  }
+
+  function declinePrivacy() {
+    setConsent(STORAGE_PRIVACY, 'declined');
+    closeModal(privacyModal);
+  }
+
+  function bindModalTrigger(trigger) {
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal(trigger.getAttribute('data-open-modal'));
+    });
+    trigger.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(trigger.getAttribute('data-open-modal'));
+      }
+    });
+  }
+
+  document.querySelectorAll('[data-open-modal]').forEach(bindModalTrigger);
+
+  document.querySelectorAll('[data-close-modal]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      closeModal(btn.closest('.modal-overlay'));
+    });
+  });
+
+  [privacyModal, cookiesModal].forEach(function (modal) {
+    if (!modal) return;
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal(modal);
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && activeModal) closeModal(activeModal);
+  });
+
+  var cookieAccept = document.getElementById('cookieAccept');
+  var cookieDecline = document.getElementById('cookieDecline');
+  if (cookieAccept) cookieAccept.addEventListener('click', acceptCookies);
+  if (cookieDecline) cookieDecline.addEventListener('click', declineCookies);
+
+  var cookiesAccept = document.getElementById('cookiesAccept');
+  var cookiesDecline = document.getElementById('cookiesDecline');
+  if (cookiesAccept) cookiesAccept.addEventListener('click', acceptCookies);
+  if (cookiesDecline) cookiesDecline.addEventListener('click', declineCookies);
+
+  var privacyAccept = document.getElementById('privacyAccept');
+  var privacyDecline = document.getElementById('privacyDecline');
+  if (privacyAccept) privacyAccept.addEventListener('click', acceptPrivacy);
+  if (privacyDecline) privacyDecline.addEventListener('click', declinePrivacy);
+
+  showCookieBanner();
 })();
