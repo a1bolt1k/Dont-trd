@@ -37,12 +37,15 @@
       dot.type = 'button';
       dot.className = 'hero__dot' + (i === 0 ? ' active' : '');
       dot.setAttribute('aria-label', 'Слайд ' + (i + 1));
-      dot.addEventListener('click', function (j) {
-        return function () {
+      (function (j) {
+        function goToSlide() {
           showSlide(j);
           resetAutoplay();
-        };
-      }(i));
+        }
+        dot.addEventListener('pointerenter', goToSlide);
+        dot.addEventListener('focus', goToSlide);
+        dot.addEventListener('click', goToSlide);
+      })(i);
       dotsContainer.appendChild(dot);
     }
   }
